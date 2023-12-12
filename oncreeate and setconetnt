@@ -1,0 +1,54 @@
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.Surface
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.themeColor
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.featherandroidtasks.ui.theme.FeatherAndroidTasksTheme
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            // Call your Composable function here to set up the UI
+            Greeting("Hello, Android!")
+        }
+    }
+}
+
+// Define a Composable function to create the UI
+@Composable
+fun Greeting(message: String) {
+    // MaterialTheme provides the default styling for the components
+    MaterialTheme {
+        // Surface is a basic container for material3 components
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = themeColor { background }
+        ) {
+            // Column is a layout composable that places its children in a vertical sequence
+            Column(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .fillMaxSize()
+            ) {
+                // Text is a simple composable for displaying text
+                Text(
+                    text = message,
+                    style = MaterialTheme.typography.h5
+                )
+            }
+        }
+    }
+}
